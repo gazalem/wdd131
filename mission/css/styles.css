@@ -14,7 +14,7 @@ body {
     border: 1px solid #eee;
 }
 
-h1, h3 {
+h1, h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .2rem;
@@ -29,7 +29,7 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-[data-theme="light"] h3 {
+[data-theme="light"] h2 {
     color: #006EB6;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -91,11 +91,11 @@ img {
     border-color: #444;
 }
 
-[data-theme="dark"] h1, h3 {
+[data-theme="dark"] h1, h2 {
     color: #ffffff;
 }
 
-[data-theme="dark"] h3 {
+[data-theme="dark"] h2 {
     color: #ffffff;
     margin-top: 0;
     margin-bottom: 1rem;
