@@ -29,12 +29,12 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-h3 {
+[data-theme="light"] h3 {
     color: #006EB6;
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-    letter-spacing: 0.25rem;;
+    letter-spacing: 0.25rem;
 }
 
 hr {
@@ -78,4 +78,31 @@ img {
     display: block;
     width: 180px;
     margin: 0 auto;
+}
+
+/* Dark Theme */
+[data-theme="dark"] body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .content {
+    background-color: #1e1e1e;
+    border-color: #444;
+}
+
+[data-theme="dark"] h1, h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.25rem;
+}
+
+[data-theme="dark"] hr {
+    border-top: 1px solid #555;
 }
