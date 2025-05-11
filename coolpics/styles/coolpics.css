@@ -1,0 +1,163 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Tagesschrift&display=swap'); */
+
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: "Mooli", sans-serif;
+    --third-font: "Tagesschrift", system-ui;
+}
+
+.tagesschrift-regular {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mooli-regular {
+  font-family: "Mooli", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+    font-family: var(--primary-font);
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+header {
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    display: block;
+    width: 100%;
+}
+
+header button {
+    background-color: transparent;
+    color: var(--text-light);
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: var(--secondary-font);
+    margin-top: 0;
+    padding: 1.2rem 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+
+section {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+}
+
+img {
+    width: 250px;
+    height: 250;
+    object-fit: cover;
+    max-width: 100%;
+    border: 5px solid var(--text-light);
+    box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.75);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries medium devices */
+@media screen and (min-width: 700px) {
+    body {
+        font-size: 1rem;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+        /* content: url("../img/norris-full.jpeg"); */
+    }
+    
+    header button {
+        font-size: 1rem;
+    }
+    
+    nav {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        flex: 1 1 0;
+    }
+
+    main {
+        margin: 0 auto;
+        width: 60%;
+    }
+    
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+        gap: 1rem;
+    }
+    
+    section h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+}
+
+/* Media Queries large devices */
+@media screen and (min-width: 1000px) {
+    #menuButton {
+        display: none;
+    }
+
+    section {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+
+}
