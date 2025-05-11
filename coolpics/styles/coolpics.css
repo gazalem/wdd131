@@ -86,7 +86,7 @@ section {
 
 img {
     width: 250px;
-    height: 250;
+    height: 250px;
     object-fit: cover;
     max-width: 100%;
     border: 5px solid var(--text-light);
