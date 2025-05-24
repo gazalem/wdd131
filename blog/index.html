@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="books, reviews, blog">
+  <meta name="description" content="A blog about book reviews and recommendations">
+  <meta name="author" content="Alan Montoya">
+  <title>Blog</title>
+  <!-- Normalize CSS -->
+  <link rel="preload" as="style" href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous' onload="this.media='all'" >
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" onload="this.media='all'">
+  <!-- Custom CSS --></head>
+  <link rel="stylesheet" href="./css/blog.css">
+  <!-- Scripts -->
+  <script type="module" src="./js/main.js" defer></script>
+<body>
+  <header>
+    <h1>Kids Read For Fun</h1>
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main-content">
+    <aside id="book-filters">
+      <form action="">
+        <label for="sort">Sort by:</label>
+        <select id="sort" name="sort">
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="date">Date</option>
+        </select>
+        <label for="age">Age Group:</label>
+        <select id="age" name="age">
+          <option value="0-5">0-5</option>
+          <option value="6-10">6-10</option>
+          <option value="11-15">11-15</option>
+        </select>
+        <label for="genre">Genre:</label>
+        <select id="genre" name="genre">
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="mystery">Mystery</option>
+          <option value="science-fiction">Science Fiction</option>
+          <option value="biography">Biography</option>
+          <option value="history">History</option>
+          <option value="poetry">Poetry</option>
+          <option value="graphic-novel">Graphic Novel</option>
+          <option value="adventure">Adventure</option>
+          <option value="horror">Horror</option>
+          <option value="romance">Romance</option>
+          <option value="self-help">Self-Help</option>
+          <option value="cookbook">Cookbook</option>
+          <option value="travel">Travel</option>
+          <option value="health">Health</option>
+          <option value="business">Business</option>
+          <option value="children">Children</option>
+          <option value="young-adult">Young Adult</option>
+          <option value="adult">Adult</option>
+          <option value="classic">Classic</option>
+          <option value="graphic-novel">Graphic Novel</option>
+          <option value="manga">Manga</option>
+          <option value="comic">Comic</option>
+          <option value="anthology">Anthology</option>
+          <option value="short-stories">Short Stories</option>
+          <option value="literary-fiction">Literary Fiction</option>
+          <option value="historical-fiction">Historical Fiction</option>
+          <option value="dystopian">Dystopian</option>
+          <option value="thriller">Thriller</option>
+          <option value="suspense">Suspense</option>
+          <option value="western">Western</option>
+          <option value="sports">Sports</option>
+          <option value="humor">Humor</option>
+          <option value="graphic-novel">Graphic Novel</option>
+        </select>
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </form>
+    </aside>
+  </div>
+</body>
+</html>
