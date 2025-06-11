@@ -166,3 +166,6 @@ $RECYCLE.BIN/
 
 # Ponder files
 ponder/
+
+# Script files
+*.sh

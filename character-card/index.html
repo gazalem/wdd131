@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="character card, RPG, game, HTML, CSS, JavaScript">
+  <meta name="description" content="An interactive character card for RPG games, showcasing character stats and actions.">
+  <meta name="author" content="Alan Montoya">
+  <title>Character Card</title>
+  <!-- Normalize -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous'>
+  <!-- Styles -->
+  <link href="./css/styles.css" rel="stylesheet">
+  <!-- Scripts -->
+  <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+  <div class="card">
+    <img class="image" src="#" alt="#">
+    <div class="name"></div>
+    <div class="stats">
+      <p><strong>Class:</strong> <span id="class"></span></p>
+      <p><strong>Level:</strong> <span id="level"></span></p>
+      <p><strong>Health:</strong> <span id="health"></span></p>
+    </div>
+
+    <div class="buttons">
+      <button id='attacked'>Attacked</button>
+      <button id='levelup'>Level Up</button>
+    </div>
+
+    <p id="log"></p>
+  </div>
+
+  <script src="script.js"></script>
+  </body>
+</html>
