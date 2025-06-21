@@ -116,6 +116,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
+  flex-direction: column-reverse;
 }
 
 footer a[title="recipe icons"] {
@@ -172,6 +173,12 @@ footer a[title="recipe icons"] {
 
   .myHeader h1 {
     font-size: 2em;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   
 }
