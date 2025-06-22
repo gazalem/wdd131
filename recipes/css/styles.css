@@ -37,6 +37,11 @@ header form button {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 16px;
+  height: 44px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header form input[type="text"] {
@@ -45,6 +50,8 @@ header form input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 5px 0 0 5px;
   font-size: 16px;
+  height: 44px;
+  box-sizing: border-box;
 }
 
 .myHeader {
