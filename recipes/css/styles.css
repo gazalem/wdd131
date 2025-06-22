@@ -9,7 +9,6 @@
 
 body {
   font-family: var(--primary-font);
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -67,10 +66,8 @@ header form input[type="text"] {
 }
 
 .myHeader h1 {
-  display: inline-block;
   font-size: 3em;
-  font-family: "Amatic SC", sans-serif;
-  font-style: normal;
+  font-family: var(--secondary-font);
   color: #000;
 }
 
@@ -117,7 +114,6 @@ h2 {
 }
 
 /* Footer Section */
-
 footer {
   display: flex;
   align-items: center;
@@ -132,29 +128,20 @@ footer a[title="recipe icons"] {
 
 .social {
   display: flex;
-  align-content: center;
   justify-content: right;
 }
 
 .social a {
-  margin: 0;
   margin-left: 0.5em;
-  padding: 0;
   text-decoration: none;
 }
 
 .social img {
   width: 35px;
   height: 35px;
-  margin: 0;
 }
 
 @media screen and (min-width: 600px) {
-  header form {
-    flex-direction: row;
-    align-items: center;
-  }
-
   header form input[type="text"] {
     width: 100%;
     margin-bottom: 1em;
@@ -184,8 +171,5 @@ footer a[title="recipe icons"] {
 
   footer {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
-  
 }
