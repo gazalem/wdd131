@@ -66,9 +66,9 @@ function recipeTemplate(recipe) {
             <h2>${recipe.name}</h2>
             ${ratingTemplate(recipe.rating)}
             <p class="description">${recipe.description}</p>
-            <p class="time">Cooking Time: ${recipe.cookTime}.</p>
-            <p class="time">Preparation Time: ${recipe.prepTime}.</p>
-            <p class="servings">Serves ${recipe.recipeYield}.</p>
+            <p class="time"><strong>Cooking Time:</strong> ${recipe.cookTime}.</p>
+            <p class="time"><strong>Preparation Time:</strong> ${recipe.prepTime}.</p>
+            <p class="servings"><strong>Serves:</strong> ${recipe.recipeYield}.</p>
             <p class="ingredients"></p>
             <strong>Ingredients:</strong>
             <ul>
@@ -156,16 +156,38 @@ function renderRecipes(recipeList) {
 
 /*
  * Function to filter recipes based on a search query.
- * @param {string} query - The search query to filter recipes by name or tags.
+ * @param {string} query - The search query to filter recipes by name, tags, ingredients, or description.
  * @example
  * filterRecipes("Dessert");
- * // Output: Renders recipes that include "Dessert" in their name or tags
+ * // Output: Renders recipes that include "Dessert" in their name, tags, ingredients, or description
  */
 function filterRecipes(query) {
+  const searchTerm = query.toLowerCase();
+  
   // Filter recipes based on the query
   const filteredRecipes = recipes.filter(recipe => {
-      return recipe.name.toLowerCase().includes(query.toLowerCase()) ||
-              recipe.tags.find(tag => tag.toLowerCase().includes(query.toLowerCase()));
+      // Search in recipe name
+      if (recipe.name.toLowerCase().includes(searchTerm)) {
+          return true;
+      }
+      
+      // Search in tags
+      if (recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm))) {
+          return true;
+      }
+      
+      // Search in ingredients
+      if (recipe.recipeIngredient.some(ingredient => 
+          ingredient.toLowerCase().includes(searchTerm))) {
+          return true;
+      }
+      
+      // Search in description
+      if (recipe.description.toLowerCase().includes(searchTerm)) {
+          return true;
+      }
+      
+      return false;
   });
 
   // Render the filtered recipes
@@ -176,9 +198,9 @@ function filterRecipes(query) {
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 
-function searchHandler() {
+function searchHandler(event) {
   // prevent the default form submission behavior
-  preventDefault();
+  event.preventDefault();
   const query = searchInput.value.trim();
   if (query) {
       filterRecipes(query);
