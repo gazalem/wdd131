@@ -36,53 +36,176 @@ function getRandomRecipe(myRecipes) {
     return myRecipes[randomIndex];
 }
 
-
+/*
+ * Function to generate HTML for a recipe card.
+ * @param {Object} recipe - An object representing a recipe.
+ * @returns {string} A string of HTML representing the recipe card.
+ * @example
+ * const recipe = {
+ *     name: "Chocolate Cake",
+ *     image: "chocolate-cake.jpg",
+ *     tags: ["Dessert", "Chocolate"],
+ *     rating: 4,
+ *     description: "A delicious chocolate cake recipe.",
+ *     time: 45,
+ *     servings: 8,
+ *     recipeIngredient: ["2 cups flour", "1 cup sugar", "1/2 cup cocoa powder"]
+ * };
+ * const recipeHtml = recipeTemplate(recipe);
+ * console.log(recipeHtml);
+ * // Output: HTML string for the recipe card
+ */
 function recipeTemplate(recipe) {
     return `
         <article class="recipe-card">
-          <img src="./img/apple-crisp.jpg" alt="Apple Crisp Dish">
+          <img src="${recipe.image}" alt="${recipe.name} Dish">
           <div class="recipe-body">
             <div class="tag">
-              <span class="tag-label">Dessert</span>
-              <span class="tag-label">Vegan</span>
+              ${tagsTemplate(recipe.tags)}
             </div>
-            <h2>Apple Crisp</h2>
-            <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-              <span aria-hidden="true" class="icon-star">⭐</span>
-              <span aria-hidden="true" class="icon-star">⭐</span>
-              <span aria-hidden="true" class="icon-star">⭐</span>
-              <span aria-hidden="true" class="icon-star-empty">⭐</span>
-              <span aria-hidden="true" class="icon-star-empty">☆</span>
-            </span>
-            <p>This apple crisp recipe is a simple yet delicious fall dessert that showcases apples at their best! The combination of warm, tender apples and the crunchy oat topping is delicious with vanilla ice cream.</p>
-            <a href="#" class="read-more">Read More</a>
+            <h2>${recipe.name}</h2>
+            ${ratingTemplate(recipe.rating)}
+            <p class="description">${recipe.description}</p>
+            <p class="time">Cooking Time: ${recipe.cookTime}.</p>
+            <p class="time">Preparation Time: ${recipe.prepTime}.</p>
+            <p class="servings">Serves ${recipe.recipeYield}.</p>
+            <p class="ingredients"></p>
+            <strong>Ingredients:</strong>
+            <ul>
+              ${recipe.recipeIngredient.map(ingredient => `<li>${ingredient}</li>`).join('')}
+            </ul>
+            <p class="instructions"><strong>Instructions:</strong> ${recipe.recipeInstructions}</p>
           </div>
         </article>
     `;
 }
 
+/*
+ * Function to generate HTML for tags.
+ * @param {Array} tags - An array of tag strings.
+ * @returns {string} A string of HTML elements representing the tags.
+ * @example
+ * const tags = ["Vegan", "Gluten-Free", "Dessert"];
+ * const tagsHtml = tagsTemplate(tags);
+ * console.log(tagsHtml);
+ * // Output: <span class="tag-label">Vegan</span><span class="tag-label">Gluten-Free</span><span class="tag-label">Dessert</span>
+ */
 function tagsTemplate(tags) {
 	// loop through the tags list and transform the strings to HTML
-
-	return html;
+  let tagsHtml = '';
+  for (const tag of tags) {
+    tagsHtml += `<span class="tag-label">${tag}</span>`;
+  }
+  return tagsHtml;
 }
 
+
+/* * Function to generate HTML for a rating.
+ * @param {number} rating - A number representing the rating (1 to 5).
+ * @returns {string} A string of HTML representing the rating stars.
+ * @example
+ * const ratingHtml = ratingTemplate(4);
+ * console.log(ratingHtml);
+ * // Output: <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">⭐ ⭐ ⭐ ⭐ ☆</span>
+ */
 function ratingTemplate(rating) {
 	// begin building an html string using the ratings HTML written earlier as a model.
 	let html = `<span
-	class="rating"
-	role="img"
-	aria-label="Rating: ${rating} out of 5 stars"
->`
-// our ratings are always out of 5, so create a for loop from 1 to 5
-
+    class="rating"
+    role="img"
+    aria-label="Rating: ${rating} out of 5 stars"
+  >`
+  // our ratings are always out of 5, so create a for loop from 1 to 5
+	for (let i = 1; i <= 5; i++) {
 		// check to see if the current index of the loop is less than our rating
 		// if so then output a filled star
-
-		// else output an empty star
+		if (i <= rating) {
+			html += `<span aria-hidden="true" class="icon-star">⭐</span>`;
+		}
+    // else output an empty star
+    else {
+			html += `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
+		}
+	}
 
 	// after the loop, add the closing tag to our string
 	html += `</span>`
 	// return the html string
 	return html
 }
+
+/*
+ * Function to render a list of recipes into the HTML document.
+ * @param {Array} recipeList - An array of recipe objects to be rendered.
+ * @example
+ * const recipes = [
+ *     { name: "Pasta", image: "pasta.jpg", tags: ["Italian"], rating: 5, description: "Delicious pasta recipe.", time: 30, servings: 4, recipeIngredient: ["pasta", "sauce"] },
+ *     { name: "Salad", image: "salad.jpg", tags: ["Healthy"], rating: 4, description: "Fresh salad recipe.", time: 15, servings: 2, recipeIngredient: ["lettuce", "tomato"] }
+ * ];
+ * renderRecipes(recipes);
+ */
+function renderRecipes(recipeList) {
+    const container = document.getElementById("recipe-container");
+    container.innerHTML = ""; // Clear existing content
+
+    recipeList.forEach(recipe => {
+        const recipeHtml = recipeTemplate(recipe);
+        container.innerHTML += recipeHtml;
+    });
+}
+
+/*
+ * Function to filter recipes based on a search query.
+ * @param {string} query - The search query to filter recipes by name or tags.
+ * @example
+ * filterRecipes("Dessert");
+ * // Output: Renders recipes that include "Dessert" in their name or tags
+ */
+function filterRecipes(query) {
+  // Filter recipes based on the query
+  const filteredRecipes = recipes.filter(recipe => {
+      return recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+              recipe.tags.find(tag => tag.toLowerCase().includes(query.toLowerCase()));
+  });
+
+  // Render the filtered recipes
+  renderRecipes(filteredRecipes);
+}
+
+
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+
+function searchHandler() {
+  // prevent the default form submission behavior
+  preventDefault();
+  const query = searchInput.value.trim();
+  if (query) {
+      filterRecipes(query);
+  }
+}
+
+// Add event listener to the search button
+searchButton.addEventListener("click", searchHandler);
+
+
+/*
+ * Function to initialize the application by fetching a random recipe and rendering it.
+ * @example
+ * init();
+ * // Output: Renders a random recipe card to the HTML document
+ */
+function init() {
+    // Get a random recipe from the recipes array
+    const randomRecipe = getRandomRecipe(recipes);
+    
+    // If a recipe is returned, render it; otherwise, log a message
+    if (typeof randomRecipe === 'object') {
+        renderRecipes([randomRecipe]);
+    } else {
+        console.log(randomRecipe); // Log the message if no recipe is available
+    }
+}
+
+// Initialize the application
+init();
