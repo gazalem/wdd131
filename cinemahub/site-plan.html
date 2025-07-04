@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<title>Site Plan</title>
+		<link type="text/css" rel="stylesheet" href="./css/site-plan.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+			<h1>CinemaHub Site Plan</h1>
+			<h2>Alan Montoya</h2>
+			<h2>WDD 131-[section]</h2>
+			<!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 131.03 -->
+		</header>
+		<main>
+			<!-- ------------------------Steps 2-3------------------------------ -->
+			<hr />
+			<h2>Overview</h2>
+			<h3>Purpose</h3>
+			<p>CinemaHub is a modern movie discovery platform that allows users to explore popular movies, search for specific titles, and get detailed information about films including cast, crew, ratings, and trailers. The site aims to provide an intuitive and visually appealing interface for movie enthusiasts to discover new films and learn more about their favorites.</p>
+			<!-- change this -->
+
+			<h3>Audience</h3>
+			<p>Movie enthusiasts, casual viewers, and anyone looking to discover new films. The primary audience includes young adults and adults (18-45) who enjoy browsing movies online, reading reviews, and discovering new content. Secondary audience includes film students and industry professionals who need quick access to movie information and details.</p>
+			<!-- change this -->
+
+			<h3>Dynamic elements</h3>
+			<p>The site will feature several interactive JavaScript elements: a dynamic movie grid that loads popular movies from TMDB API, real-time search functionality with filtering options, interactive movie cards with hover effects, a favorites system using localStorage, rating display with animated stars, genre filtering with toggle buttons, infinite scroll for movie listings(or at least I try :) ), modal windows for trailers, and responsive navigation with mobile hamburger menu. The site will use async/await for API calls, ES6 modules for code organization, and array methods like map(), filter(), and reduce() for data manipulation.</p>
+			<!-- change this -->
+
+			<hr />
+			<h2>Branding</h2>
+			<h3>Website Logo</h3>
+			<!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
+			<div class="logo-placeholder">
+				<!-- <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #1a1a1a; font-size: 2.5rem; margin: 0;">CinemaHub</h1> -->
+				 <img src="./images/logo.svg" alt="CinemaHub Logo" style="width: 200px; height: auto; margin: 0 auto; display: block; box-shadow: none; border-radius: 0">
+				<p style="font-family: 'Inter', sans-serif; color: #6b7280; margin: 0;">Discover Your Next Favorite Movie</p>
+			</div>
+			<hr />
+			<h2>Style Guide</h2>
+
+			<!-- ------------------------Steps 4-8------------------------------ -->
+
+			<h3>Color Palette</h3>
+			<!--  The colors you choose for a website are one of the most important decisions you will make. Follow the instructions on the activity in iLearn then return and replace the color codes below with the hex color codes (the 6 digit numbers that show at the bottom of each color) for the colors you have chosen below.  You should have at least 2 colors but do not have to fill in all 4 if you do not need them.  -->
+
+			<!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
+			Palette URL:
+			<a
+				href="https://coolors.co/1a1a1a-f59e0b-ef4444-6b7280-f3f4f6"
+				target="_blank"
+				>https://coolors.co/1a1a1a-f59e0b-ef4444-6b7280-f3f4f6</a
+			>
+
+			<table class="colors">
+				<tbody>
+					<tr>
+						<th>Primary</th>
+						<th>Secondary</th>
+						<th>Accent 1</th>
+						<th>Accent 2</th>
+					</tr>
+					<!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
+					<tr>
+						<td class="primary">#1A1A1A</td>
+						<td class="secondary">#F59E0B</td>
+						<td class="accent1">#EF4444</td>
+						<td class="accent2">#6B7280</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- ------------------------Step 9------------------------------ -->
+
+			<h3>Typography</h3>
+			<!-- Choose a font for your paragraphs (body copy) and headlines. What font(s) have you chosen? Why did you choose what you did?  Make sure to review the list of web safe fonts at W3Schools.org as a starting point.  Think also about which of your colors above you might use for background and font colors. -->
+
+			<h4>
+				Heading Font: Poppins
+				<!-- change this -->
+			</h4>
+			<h4>
+				Paragraph Font: Inter
+				<!-- change this -->
+			</h4>
+			<h3>Normal paragraph example</h3>
+			<p>
+				Discover the latest blockbusters, hidden gems, and critically acclaimed films from around the world. Our platform provides comprehensive movie information including cast details, user ratings, plot summaries, and high-quality trailers. Whether you're looking for action-packed adventures, heartwarming dramas, or mind-bending thrillers, CinemaHub helps you find your next favorite movie with ease.
+			</p>
+			<h3>Colored paragraph example</h3>
+			<p class="colored">
+				Join thousands of movie enthusiasts who use CinemaHub to discover, rate, and discuss their favorite films. Create your personal watchlist, explore curated collections, and never miss a highly-rated movie again.
+			</p>
+
+			<!-- ------------------------Step 10------------------------------ -->
+
+			<h3>Navigation</h3>
+			<!-- Think about how you want your navigation bar to look. In the site-plan.css file change the colors to your colors to get the look you desire. -->
+			<nav>
+				<a href="#">Home</a>
+				<a href="#">Movie Details</a>
+				<a href="#">Favorites</a>
+			</nav>
+			<hr />
+
+			<h2>Content</h2>
+			<h3>Home page</h3>
+			<p>
+				<strong>Hero Section:</strong> Featured movie of the day with large backdrop image, title, rating, and quick actions.<br>
+				<strong>Popular Movies Grid:</strong> Dynamic grid of popular movies loaded from TMDB API, each card showing poster, title, release year, and rating.<br>
+				<strong>Search Bar:</strong> Real-time search functionality with auto-suggestions.<br>
+				<strong>Filter Options:</strong> Genre filters, rating filters, and year range selectors.<br>
+				<strong>Trending Section:</strong> Horizontal scrolling carousel of trending movies.<br>
+				<strong>Navigation:</strong> Sticky header with logo, search, and user actions.
+			</p>
+			<h3>Movie Details</h3>
+			<p>
+				<strong>Movie Header:</strong> Large backdrop image with movie poster, title, tagline, and key information.<br>
+				<strong>Movie Information:</strong> Plot summary, cast list with photos, crew information, runtime, genres, and production details.<br>
+				<strong>Ratings & Reviews:</strong> User ratings, critic scores, and review highlights.<br>
+				<strong>Media Gallery:</strong> Photo gallery and trailer player with YouTube integration.<br>
+				<strong>Related Movies:</strong> Similar movies and recommendations based on genre/cast.<br>
+				<strong>User Actions:</strong> Add to favorites, rate movie, and share functionality.
+			</p>
+			<h2>Wireframes</h2>
+			<p>
+				Create two wireframes for your site. One for each page and list them
+				here
+			</p>
+
+			<h3>Home</h3>
+			<p>
+				The home page features a clean, modern layout with a prominent search bar at the top, followed by a hero section showcasing a featured movie. Below that, a responsive grid layout displays popular movies with infinite scroll functionality. The navigation is sticky and includes logo, search, and user actions.
+			</p>
+			<div class="wireframe-placeholder">
+				<p style="text-align: center; padding: 40px; background: #f3f4f6; border: 2px dashed #6b7280; margin: 20px 0;">
+					[Home Page Wireframe]<br>
+					Header: Logo + Search + Navigation<br>
+					Hero: Featured Movie Section<br>
+					Main: Movie Grid (4 columns on desktop, responsive)<br>
+					Filters: Genre buttons, Rating filter<br>
+					Footer: Links and information
+				</p>
+			</div>
+
+			<h3>Movie Details</h3>
+			<p>
+				The movie details page uses a full-width layout with a large backdrop header image, followed by detailed information sections. The layout is optimized for both desktop and mobile viewing with collapsible sections for better mobile experience.
+			</p>
+			<div class="wireframe-placeholder">
+				<p style="text-align: center; padding: 40px; background: #f3f4f6; border: 2px dashed #6b7280; margin: 20px 0;">
+					[Movie Details Wireframe]<br>
+					Header: Navigation + Back button<br>
+					Hero: Large backdrop + Movie poster + Title + Rating<br>
+					Content: Plot + Cast + Details (2-column layout)<br>
+					Media: Trailer + Photo gallery<br>
+					Related: Similar movies section
+				</p>
+			</div>
+		</main>
+	</body>
+</html>

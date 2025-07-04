@@ -1,0 +1,386 @@
+/* Import Google fonts for CinemaHub project */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Updated colors for modern CinemaHub design */
+  --primary-color: #1a1a1a;
+  --secondary-color: #f59e0b;
+  --accent1-color: #ef4444;
+  --accent2-color: #6b7280;
+
+  /* Updated fonts for modern look */
+  --heading-font: "Poppins", sans-serif;
+  --paragraph-font: "Inter", sans-serif;
+
+  /* Color combinations for different backgrounds */
+  --headline-color-on-white: var(--primary-color);
+  --headline-color-on-color: white;
+  --paragraph-color-on-white: var(--primary-color);
+  --paragraph-color-on-color: white;
+  --paragraph-background-color: var(--primary-color);
+  --nav-link-color: white;
+  --nav-background-color: var(--primary-color);
+  --nav-hover-link-color: var(--primary-color);
+  --nav-hover-background-color: var(--secondary-color);
+  
+  /* Additional modern colors */
+  --neutral-light: #f3f4f6;
+  --neutral-white: #ffffff;
+  --text-light: #6b7280;
+}
+
+/* Base styles - enhanced for modern look */
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em;
+  font-size: 18px;
+  font-family: var(--paragraph-font);
+  line-height: 1.6;
+  color: var(--paragraph-color-on-white);
+  background-color: var(--neutral-white);
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent1-color));
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: var(--accent2-color);
+  font-weight: 500;
+}
+
+/* Enhanced horizontal rules */
+hr {
+  height: 3px;
+  margin: 35px 0;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent1-color));
+  border: none;
+  border-radius: 2px;
+}
+
+/* Enhanced header with gradient */
+header {
+  padding: 2em;
+  text-align: center;
+  color: var(--paragraph-color-on-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent2-color));
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+header > h1, header > h2 {
+  color: var(--headline-color-on-color);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+header h2::after {
+  display: none; /* Remove underline for header h2 */
+}
+
+/* Enhanced paragraph styles */
+p {
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color-on-white);
+  padding: 1em;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Enhanced color table */
+.colors {
+  width: 100%;
+  min-width: 350px;
+  margin: 30px auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.colors th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+.colors td {
+  width: 25%;
+  height: 4em;
+  font-family: var(--paragraph-font);
+  font-weight: 500;
+  color: white;
+  position: relative;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+}
+
+.accent1 {
+  background-color: var(--accent1-color);
+}
+
+.accent2 {
+  background-color: var(--accent2-color);
+}
+
+/* Enhanced colored paragraph */
+p.colored {
+  background: linear-gradient(135deg, var(--neutral-light), rgba(245, 158, 11, 0.1));
+  color: var(--primary-color);
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Enhanced navigation */
+nav {
+  background-color: var(--nav-background-color);
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  padding: 1em;
+  min-width: 120px;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+nav a:link, nav a:visited {
+  color: var(--nav-link-color);
+}
+
+nav a:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Enhanced sitemap */
+.sitemap {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(6, 15%);
+  grid-template-rows: 3em 1.5em 1.5em 3em;
+  grid-template-areas:
+    ". . home home . ."
+    ". . . top . ."
+    ". left left right right ."
+    "page2 page2 . . page3 page3";
+  gap: 0.5rem;
+}
+
+.sitemap > div {
+  text-align: center;
+  font-family: var(--heading-font);
+  font-weight: 500;
+}
+
+.sm-home {
+  grid-area: home;
+  background-color: var(--secondary-color);
+  line-height: 3em;
+  border-radius: 6px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.sm-page2 {
+  grid-area: page2;
+  background-color: var(--accent2-color);
+  line-height: 3em;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+}
+
+.sm-page3 {
+  grid-area: page3;
+  background-color: var(--accent1-color);
+  line-height: 3em;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+}
+
+.top {
+  grid-area: top;
+  border-left: 2px solid var(--primary-color);
+}
+
+.left {
+  grid-area: left;
+  border-top: 2px solid var(--primary-color);
+  border-left: 2px solid var(--primary-color);
+}
+
+.right {
+  grid-area: right;
+  border-top: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}
+
+/* Additional modern enhancements */
+.logo-placeholder {
+  background: var(--neutral-white);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.wireframe-placeholder {
+  margin: 2rem 0;
+}
+
+.wireframe-placeholder p {
+  font-family: var(--paragraph-font);
+  font-size: 0.9rem;
+  color: var(--accent2-color);
+  border-radius: 8px;
+  border: 2px dashed var(--accent2-color);
+  background: var(--neutral-light);
+}
+
+/* Links enhancement */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent1-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 2em 1em;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  nav {
+    flex-direction: column;
+  }
+  
+  nav a {
+    margin: 0.25rem 0;
+  }
+  
+  .colors td {
+    font-size: 0.8rem;
+    height: 3em;
+  }
+  
+  .sitemap {
+    grid-template-columns: repeat(6, 16%);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main > * {
+  animation: fadeIn 0.6s ease-out;
+}
