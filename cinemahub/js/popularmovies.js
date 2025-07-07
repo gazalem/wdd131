@@ -393,6 +393,398 @@ export const popularMovies = {
       "video": false,
       "vote_average": 6.429,
       "vote_count": 21
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        12,
+        14
+      ],
+      "id": 950387,
+      "original_language": "en",
+      "original_title": "A Minecraft Movie",
+      "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
+      "popularity": 128.6638,
+      "poster_path": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
+      "release_date": "2025-03-31",
+      "title": "A Minecraft Movie",
+      "video": false,
+      "vote_average": 6.46,
+      "vote_count": 2007
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qwK9soQmmJ7kRdjLZVXblw3g7AQ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53,
+        80
+      ],
+      "id": 7451,
+      "original_language": "en",
+      "original_title": "xXx",
+      "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+      "popularity": 126.0195,
+      "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+      "release_date": "2002-08-09",
+      "title": "xXx",
+      "video": false,
+      "vote_average": 5.945,
+      "vote_count": 4453
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zxjFabSJKMAvuu3acNg78nuTuCs.jpg",
+      "genre_ids": [
+        28,
+        53,
+        27
+      ],
+      "id": 1442776,
+      "original_language": "zh",
+      "original_title": "Kuang Bao Ju Xi",
+      "overview": "A young man climbs into the mountains to pick up a meteorite that has fallen there and is killed by something. The \"thing\" descends to the village and begins to eat the inhabitants one by one, terrorizing the entire island.",
+      "popularity": 123.8109,
+      "poster_path": "/9TFaFsSXedaALXTzba349euDeoY.jpg",
+      "release_date": "2024-03-27",
+      "title": "Crazy Lizard",
+      "video": false,
+      "vote_average": 6.042,
+      "vote_count": 24
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jgrImRKhsRXaa6wlSsQPnFRUQbH.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 1412113,
+      "original_language": "ko",
+      "original_title": "오징어 게임: 시즌2 제작 이야기",
+      "overview": "From set designs to character arcs, get exclusive cast and director interviews on how Season 2 of the globally most-watched series was brought to life.",
+      "popularity": 116.731,
+      "poster_path": "/yQGaui0bQ5Ai3KIFBB45nTeIqad.jpg",
+      "release_date": "2025-01-02",
+      "title": "Squid Game: Making Season 2",
+      "video": false,
+      "vote_average": 8.498,
+      "vote_count": 417
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6van4BavoNXaZhCPdzLHNQ4Uc8H.jpg",
+      "genre_ids": [
+        53,
+        28
+      ],
+      "id": 1087891,
+      "original_language": "en",
+      "original_title": "The Amateur",
+      "overview": "After his life is turned upside down when his wife is killed in a London terrorist attack, a brilliant but introverted CIA decoder takes matters into his own hands when his supervisors refuse to take action.",
+      "popularity": 115.4929,
+      "poster_path": "/SNEoUInCa5fAgwuEBMIMBGvkkh.jpg",
+      "release_date": "2025-04-09",
+      "title": "The Amateur",
+      "video": false,
+      "vote_average": 7.007,
+      "vote_count": 732
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xPNDRM50a58uvv1il2GVZrtWjkZ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53
+      ],
+      "id": 575265,
+      "original_language": "en",
+      "original_title": "Mission: Impossible - The Final Reckoning",
+      "overview": "Ethan Hunt and team continue their search for the terrifying AI known as the Entity — which has infiltrated intelligence networks all over the globe — with the world's governments and a mysterious ghost from Hunt's past on their trail. Joined by new allies and armed with the means to shut the Entity down for good, Hunt is in a race against time to prevent the world as we know it from changing forever.",
+      "popularity": 114.7293,
+      "poster_path": "/z53D72EAOxGRqdr7KXXWp9dJiDe.jpg",
+      "release_date": "2025-05-17",
+      "title": "Mission: Impossible - The Final Reckoning",
+      "video": false,
+      "vote_average": 7.19,
+      "vote_count": 906
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fPWJn5pqBr8n4h0YxW3QuasdvoI.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 1127110,
+      "original_language": "en",
+      "original_title": "Diablo",
+      "overview": "Ex-con Kris Chaney seizes the daughter of a Colombian gangster to fulfill a noble promise to the young girl's mother. When her father enlists both the criminal underworld and a psychotic killer to exact his revenge, Kris relies on everything he's ever learned to stay alive and keep his word.",
+      "popularity": 109.6599,
+      "poster_path": "/uFQduVyYIinJy3eLjozgfl6Xtcn.jpg",
+      "release_date": "2025-06-13",
+      "title": "Diablo",
+      "video": false,
+      "vote_average": 7.186,
+      "vote_count": 70
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kyBOGOBUMdGWOhzECuosPSzoMpi.jpg",
+      "genre_ids": [
+        28,
+        878,
+        53
+      ],
+      "id": 1071585,
+      "original_language": "en",
+      "original_title": "M3GAN 2.0",
+      "overview": "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+      "popularity": 104.8593,
+      "poster_path": "/4a63rQqIDTrYNdcnTXdPsQyxVLo.jpg",
+      "release_date": "2025-06-25",
+      "title": "M3GAN 2.0",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 117
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wnnu8htEZBLtwrke9QYfLKx6zjp.jpg",
+      "genre_ids": [
+        53,
+        18,
+        80
+      ],
+      "id": 1426776,
+      "original_language": "en",
+      "original_title": "STRAW",
+      "overview": "What will be her last straw? A devastatingly bad day pushes a hardworking single mother to the breaking point — and into a shocking act of desperation.",
+      "popularity": 94.9567,
+      "poster_path": "/t3cmnXYtxJb9vVL1ThvT2CWSe1n.jpg",
+      "release_date": "2025-06-05",
+      "title": "STRAW",
+      "video": false,
+      "vote_average": 7.941,
+      "vote_count": 713
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9f06S7Uc1Xmnc3OYtK8UKu9o3Ox.jpg",
+      "genre_ids": [
+        28,
+        12,
+        27
+      ],
+      "id": 1181039,
+      "original_language": "zh",
+      "original_title": "鬼吹灯：献王虫谷",
+      "overview": "Adapted from the 3rd volume in the novel series \"Candle in the Tomb\" by Zhang Mu Ye. Hu Bayi, Wang Kaixuan, and Shiely Yang, infected with a curse, embark on a journey to King Xian's tomb to retrieve the Haochen Bead and break the curse. They face ancient organs, ghostly visions, explosive bugs, and a massive salamander.",
+      "popularity": 94.7638,
+      "poster_path": "/7Hk1qxAvZi9H9cfBb4iHkoGjapH.jpg",
+      "release_date": "2023-09-22",
+      "title": "Candle in the Tomb: The Worm Valley",
+      "video": false,
+      "vote_average": 6.667,
+      "vote_count": 21
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vNUwK5P42m81uG57kKI1WxSZwIQ.jpg",
+      "genre_ids": [
+        35,
+        10749
+      ],
+      "id": 1403735,
+      "original_language": "te",
+      "original_title": "లైలా",
+      "overview": "Sonu Model, a renowned beautician from the old city, is forced to disguise himself as Laila, leading to a series of comedic, romantic, and action-packed events. Chaos ensues in this hilarious laugh riot",
+      "popularity": 93.5117,
+      "poster_path": "/l4gsNxFPGpzbq0D6QK1a8vO1lBz.jpg",
+      "release_date": "2025-02-14",
+      "title": "Laila",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hLpuo585mwOWKVco2RPZjgu8RnA.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 1504735,
+      "original_language": "ko",
+      "original_title": "오징어 게임 이야기",
+      "overview": "Take a seat with the director and cast of Squid Game. Discover key moments, hear untold stories and see what this entire journey meant to them.",
+      "popularity": 87.6585,
+      "poster_path": "/gn1rd6ZTJSfVLGzPDqiBv2xNRjj.jpg",
+      "release_date": "2025-06-26",
+      "title": "Squid Game in Conversation",
+      "video": false,
+      "vote_average": 8.8,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/a3F9cXjRH488qcOqFmFZwqawBMU.jpg",
+      "genre_ids": [
+        16,
+        28,
+        878,
+        53
+      ],
+      "id": 1376434,
+      "original_language": "en",
+      "original_title": "Predator: Killer of Killers",
+      "overview": "While three of the fiercest warriors in human history—a Viking raider, a ninja in feudal Japan, and a WWII pilot—are killers in their own right, they are merely prey for their new opponent: the ultimate killer of killers.",
+      "popularity": 87.4268,
+      "poster_path": "/2XDQa6EmFHSA37j1t0w88vpWqj9.jpg",
+      "release_date": "2025-06-05",
+      "title": "Predator: Killer of Killers",
+      "video": false,
+      "vote_average": 7.963,
+      "vote_count": 683
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yBDvgpyynDsbMyK21FoQu1c2wYR.jpg",
+      "genre_ids": [
+        9648,
+        80,
+        53
+      ],
+      "id": 870028,
+      "original_language": "en",
+      "original_title": "The Accountant²",
+      "overview": "When an old acquaintance is murdered, Wolff is compelled to solve the case. Realizing more extreme measures are necessary, Wolff recruits his estranged and highly lethal brother, Brax, to help. In partnership with Marybeth Medina, they uncover a deadly conspiracy, becoming targets of a ruthless network of killers who will stop at nothing to keep their secrets buried.",
+      "popularity": 83.2926,
+      "poster_path": "/kMDUS7VmFhb2coRfVBoGLR8ADBt.jpg",
+      "release_date": "2025-04-23",
+      "title": "The Accountant²",
+      "video": false,
+      "vote_average": 7.197,
+      "vote_count": 1052
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/eYKsMetCKnQC2tRPQ6YvODTkFdO.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 611251,
+      "original_language": "ja",
+      "original_title": "女高生トリオ 性感試験",
+      "overview": "Three high school girls. One is experienced, one has fantasies and one is curious. What more will they learn before graduation?",
+      "popularity": 82.3309,
+      "poster_path": "/9GSLrU0aoR6Pi2FQ0ttXV2thSxJ.jpg",
+      "release_date": "1977-02-23",
+      "title": "Jokōsei torio: seikan shiken",
+      "video": false,
+      "vote_average": 7.333,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "id": 1197306,
+      "original_language": "en",
+      "original_title": "A Working Man",
+      "overview": "Levon Cade left behind a decorated military career in the black ops to live a simple life working construction. But when his boss's daughter, who is like family to him, is taken by human traffickers, his search to bring her home uncovers a world of corruption far greater than he ever could have imagined.",
+      "popularity": 81.9852,
+      "poster_path": "/6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg",
+      "release_date": "2025-03-26",
+      "title": "A Working Man",
+      "video": false,
+      "vote_average": 6.69,
+      "vote_count": 1345
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gIwG9UWJLsiSBfaG5GJWGj9ghXD.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 713364,
+      "original_language": "en",
+      "original_title": "Clown in a Cornfield",
+      "overview": "Quinn and her father have just moved to the quiet town of Kettle Springs hoping for a fresh start. Instead, she discovers a fractured community that has fallen on hard times after the treasured Baypen Corn Syrup Factory burned down. As the locals bicker amongst themselves and tensions boil over, a sinister, grinning figure emerges from the cornfields to cleanse the town of its burdens, one bloody victim at a time.",
+      "popularity": 81.8473,
+      "poster_path": "/6ep6gw90TJ8bYvJC6hEDo8SxjoJ.jpg",
+      "release_date": "2025-05-08",
+      "title": "Clown in a Cornfield",
+      "video": false,
+      "vote_average": 6.32,
+      "vote_count": 153
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/g62G6aBcAcJv3ClCKmJgmHarHvq.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 1061474,
+      "original_language": "en",
+      "original_title": "Superman",
+      "overview": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
+      "popularity": 80.3508,
+      "poster_path": "/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
+      "release_date": "2025-07-09",
+      "title": "Superman",
+      "video": false,
+      "vote_average": 5.2,
+      "vote_count": 9
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/m0ObOaJBerZ3Unc74l471ar8Iiy.jpg",
+      "genre_ids": [
+        28,
+        14
+      ],
+      "id": 547016,
+      "original_language": "en",
+      "original_title": "The Old Guard",
+      "overview": "Four undying warriors who've secretly protected humanity for centuries become targeted for their mysterious powers just as they discover a new immortal.",
+      "popularity": 77.9955,
+      "poster_path": "/cjr4NWURcVN3gW5FlHeabgBHLrY.jpg",
+      "release_date": "2020-07-09",
+      "title": "The Old Guard",
+      "video": false,
+      "vote_average": 7.14,
+      "vote_count": 4397
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lu4khHVh8ZF9AbaxW26pp4yLubb.jpg",
+      "genre_ids": [
+        10751
+      ],
+      "id": 1408248,
+      "original_language": "xx",
+      "original_title": "오징어 게임: 벽난로",
+      "overview": "Come share a toast in the Front Man's lair — but tread carefully, for you’re playing with fire.",
+      "popularity": 76.4133,
+      "poster_path": "/cIIMvxLztRs1MbXH0oqaw3SGV0q.jpg",
+      "release_date": "2024-12-12",
+      "title": "Squid Game: Fireplace",
+      "video": false,
+      "vote_average": 7.0,
+      "vote_count": 139
     }
   ],
   "total_pages": 51262,

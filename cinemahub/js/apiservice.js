@@ -1,30 +1,21 @@
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZTY5MjY1ODZiOWRlMWUxODZmODQxODZjZTA0MGY1NSIsIm5iZiI6MTc1MTYxMDc3MS44MzksInN1YiI6IjY4Njc3NTkzMWM2ZjRkMmQ0MDFiMjQzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vCEssoDknfrefb2yv7YCp8wqb19rk1aXcVcnq6n7llk'
-  }
-};
-
-const apiBaseUrl = 'https://api.themoviedb.org/3';
+// The new base URL for our API requests is the serverless function endpoint
+const apiBaseUrl = '/.netlify/functions/tmdb-proxy';
 const imageSecureBaseUrl = 'https://image.tmdb.org/t/p/';
 
-fetch(`${apiBaseUrl}/authentication`, options)
-  .then(res => res.json())
-  .then(res => console.log(res.success ? 'API is accessible' : 'API is not accessible'))
-  .catch(err => console.error(err));
+// This check is no longer needed as we are proxying requests.
+// The proxy will handle API key authentication.
+console.log('API service is ready.');
 
 // Function to fetch movies from the API
 async function discoverMovies() {
   try {
-    const response = await fetch(`${apiBaseUrl}/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=popularity.desc`, options);
+    // The query parameters are now passed to our proxy function
+    const response = await fetch(`${apiBaseUrl}/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=popularity.desc`);
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
     }
     const data = await response.json();
-    // Process the data as needed
-    // console.log(data);
-    return data.results; // Assuming the API returns an array of movies in 'results'
+    return data.results;
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
   }
@@ -32,14 +23,12 @@ async function discoverMovies() {
 
 async function popularMovies() {
   try {
-    const response = await fetch(`${apiBaseUrl}/movie/popular?language=en-US&page=1`, options);
+    const response = await fetch(`${apiBaseUrl}/movie/popular?language=en-US&page=1`);
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
     }
     const data = await response.json();
-    // Process the data as needed
-    // console.log(data);
-    return data.results; // Assuming the API returns an array of movies in 'results'
+    return data.results;
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
   }
@@ -47,14 +36,13 @@ async function popularMovies() {
 
 async function imagesConfiguration() {
   try {
-    const response = await fetch(`${apiBaseUrl}/configuration`, options);
+    const response = await fetch(`${apiBaseUrl}/configuration`);
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
     }
     const data = await response.json();
-    // Process the data as needed
     console.log(data.images);
-    return data.images; // Assuming the API returns an array of movies in 'results'
+    return data.images;
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
   }
@@ -66,8 +54,11 @@ async function displayMovies() {
 }
 
 displayMovies();
-imagesConfiguration()  .then(images => {
-    console.log('Images configuration:', images);})
+imagesConfiguration()
+  .then(images => {
+    console.log('Images configuration:', images);
+  })
   .catch(error => {
     console.error('Error fetching images configuration:', error);
   });
+

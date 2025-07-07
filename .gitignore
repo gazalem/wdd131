@@ -169,3 +169,6 @@ ponder/
 
 # Script files
 *.sh
+
+# Environment variables
+.env
