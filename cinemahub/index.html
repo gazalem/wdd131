@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CinemaHub Home Wireframe</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous'/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/site-plan.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/apiservice.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header-bar">
+    <img id="site-logo" src="./images/logo.svg" alt="CinemaHub Logo">
+    <div class="search-bar">
+      <input type="text" placeholder="Search movies...">
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Movie Details</a>
+      <a href="#">Favorites</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Featured Movie Title</h1>
+    <p>Catch the most popular movie of the day, watch trailer and read reviews.</p>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <button>Action</button>
+    <button>Comedy</button>
+    <button>Drama</button>
+    <button>Horror</button>
+    <button>Sci-Fi</button>
+    <select>
+      <option>All Ratings</option>
+      <option>9+</option>
+      <option>8+</option>
+      <option>7+</option>
+    </select>
+  </section>
+
+  <!-- Main Movie Grid -->
+  <main class="movie-grid">
+    <div class="movie-card">
+      <img src="https://via.placeholder.com/200x280" alt="Movie Poster">
+      <h3>Movie Title</h3>
+      <p>⭐ 8.5</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://via.placeholder.com/200x280" alt="Movie Poster">
+      <h3>Movie Title</h3>
+      <p>⭐ 7.9</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://via.placeholder.com/200x280" alt="Movie Poster">
+      <h3>Movie Title</h3>
+      <p>⭐ 9.1</p>
+    </div>
+    <div class="movie-card">
+      <img src="https://via.placeholder.com/200x280" alt="Movie Poster">
+      <h3>Movie Title</h3>
+      <p>⭐ 8.0</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CinemaHub. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>
