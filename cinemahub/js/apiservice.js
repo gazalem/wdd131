@@ -65,6 +65,23 @@ async function displayMovies() {
   console.log('movies:', movies);
 }
 
+async function movieDetails(movieId) {
+  try {
+    const response = await fetch(`${apiBaseUrl}/movie/${movieId}?language=en-US`, options);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const data = await response.json();
+    // Process the data as needed
+    console.log(data);
+    return data; // Assuming the API returns movie details
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
+}
+
+
+// this will be removed later
 displayMovies();
 imagesConfiguration()
   .then(images => {
