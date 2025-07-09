@@ -8,24 +8,33 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="./css/site-plan.css">
+  <!-- Font Awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' integrity='sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==' crossorigin='anonymous'/>
+  <!-- Custom Styles -->
+  <!-- <link rel="stylesheet" href="./css/site-plan.css"> -->
   <link rel="stylesheet" href="./css/main.css">
   <script src="./js/main.js" type="module"></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header-bar">
-    <img id="site-logo" src="./images/logo.svg" alt="CinemaHub Logo">
-    <div class="search-bar">
-      <input type="text" placeholder="Search movies...">
+  <header>
+    <img src="./images/logo.svg" alt="Logo" id="site-logo">
+    <div class="mobileMenuWrapper">
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Movie Details</a>
+            <!-- <a href="#">Favorites</a> -->
+        </nav>
+        <div class="searchBar">
+            <input type="text" name="search" placeholder="Search" class="searchInputBox">
+            <button class="searchButton">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <i class="hamburgerMenu fa-solid fa-bars"></i>
     </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Movie Details</a>
-      <a href="#">Favorites</a>
-    </nav>
-  </header>
+</header>
 
   <!-- Hero Section -->
   <section class="hero">

@@ -2,6 +2,21 @@ import * as ApiService from './apiservice.js';
 import { movieGenre } from './moviegenre.js';
 import { popularMovies } from './popularmovies.js';
 
+// Hamburger Menu Toggle
+const hamburgerMenu = document.getElementsByClassName("hamburgerMenu")[0]
+const mobileMenuWrapper = document.getElementsByClassName("mobileMenuWrapper")[0]
+
+hamburgerMenu.addEventListener("click", showMobileMenu)
+
+function showMobileMenu() {
+  mobileMenuWrapper.classList.toggle("clicked");
+  hamburgerMenu.classList.toggle("fa-xmark");
+  hamburgerMenu.classList.toggle("fa-bars");
+  document.body.classList.toggle("blockScroll");
+}
+
+
+
 const posterSize = 'w342'; // Size of the poster images
 
 /*
