@@ -59,7 +59,7 @@ function movieTemplate(movie) {
 
 function renderMovies(movies) {
   const movieContainer = document.querySelector('.movie-grid');
-  movieContainer.innerHTML = ''; // Clear existing content
+  movieContainer.innerHTML = ''; // Clear existing skeletons
   movies.forEach(movie => {
     const movieHtml = movieTemplate(movie);
     movieContainer.innerHTML += movieHtml;
