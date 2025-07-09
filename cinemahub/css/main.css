@@ -27,6 +27,8 @@
   --neutral-light: #f3f4f6;
   --neutral-white: #ffffff;
   --text-light: #6b7280;
+
+  font-display: swap;
 }
 
 /* Additional layout styles for wireframe */
@@ -253,6 +255,7 @@ header {
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 0.5rem;
+  aspect-ratio: 2 / 3; /* Maintain a 2:3 aspect ratio */
 }
 
 footer {
