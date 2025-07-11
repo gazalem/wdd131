@@ -1,5 +1,6 @@
 /* Import Google fonts for CinemaHub project */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
   /* Updated colors for modern CinemaHub design */
@@ -132,9 +133,23 @@ header {
 .searchInputBox,
 .searchButton {
   border: none;
-  outline: white 1px solid;
+  outline: none;
   background-color: white;
-  /* padding: 0.5rem 1rem; */
+  padding: 0.5rem 1rem;
+}
+
+.searchInputBox {
+  border-radius: 100px 0 0 100px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  font-family: var(--paragraph-font);
+  color: var(--primary-color);
+}
+
+.searchButton {
+  border-radius: 0 100px 100px 0;
+  /* background-color: var(--secondary-color); */
+  cursor: pointer;
 }
 
 .searchBar {
@@ -189,7 +204,7 @@ header {
 
 .mobileMenuWrapper.clicked .searchBar {
   display: flex;
-  width: 80%;
+  width: 50%;
   align-self: center;
 }
 
@@ -258,6 +273,10 @@ header {
   aspect-ratio: 2 / 3; /* Maintain a 2:3 aspect ratio */
 }
 
+.movie-card p {
+  line-height: 1.6;
+}
+
 footer {
   background-color: var(--primary-color);
   color: white;
@@ -266,6 +285,11 @@ footer {
   border-radius: 12px;
   font-family: var(--paragraph-font);
   margin-top: 2rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
