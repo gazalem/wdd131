@@ -186,13 +186,25 @@ window.addEventListener('click', (event) => {
   }
 });
 
+async function renderHero() {
+  const featuredMovie = await ApiService.featureMovie();
+  if (featuredMovie) {
+    const details = await ApiService.movieDetails(featuredMovie.id);
+    const heroSection = document.querySelector('.hero');
+    heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${ApiService.imageSecureBaseUrl}w1280${details.backdrop_path})`;
+    heroSection.innerHTML = `
+      <h1>Featured Movie: ${details.title}</h1>
+      <p>${details.tagline || details.overview}</p>
+    `;
+  }
+}
+
 async function Main() {
+  await renderHero();
   allGenres = await ApiService.getMovieGenres();
   allTrendingMovies = await ApiService.trendingMovies();
   renderMovies(allTrendingMovies);
-
-  const uniqueGenres = getUniqueGenres(allTrendingMovies);
-  renderGenreFilters(uniqueGenres);
+  renderGenreFilters(getUniqueGenres(allTrendingMovies));
 }
 
 Main();

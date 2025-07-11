@@ -75,6 +75,20 @@ async function imagesConfiguration() {
   }
 }
 
+async function featureMovie(timeWindows = 'day') {
+  try {
+    const response = await fetch(`${apiBaseUrl}/trending/movie/${timeWindows}?language=en-US`, options);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const data = await response.json();
+    // Process the data as needed
+    // console.log(data.results);
+    return data.results[0]; // Assuming the API returns an array of movies in 'results'
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
+}
 
 async function movieDetails(movieId) {
   try {
@@ -84,7 +98,7 @@ async function movieDetails(movieId) {
     }
     const data = await response.json();
     // Process the data as needed
-    console.log(data);
+    // console.log(data);
     return data; // Assuming the API returns movie details
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
@@ -101,16 +115,13 @@ async function searchMovies(query) {
     const data = await response.json();
     // Sort by popularity descending
     const sortedResults = data.results.sort((a, b) => b.popularity - a.popularity);
-    console.log(sortedResults);
+    // console.log(sortedResults);
     return sortedResults; // Return the sorted array
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
   }
 }
 
-async function displayMovies() {
-  const movies = await discoverMovies();
-  console.log('movies:', movies);
-}
 
-export { discoverMovies, trendingMovies, imagesConfiguration, apiBaseUrl, imageSecureBaseUrl, searchMovies, getMovieGenres, movieDetails };
+
+export { discoverMovies, trendingMovies, imagesConfiguration, apiBaseUrl, imageSecureBaseUrl, searchMovies, getMovieGenres, movieDetails, featureMovie };
