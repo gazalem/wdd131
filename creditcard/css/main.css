@@ -160,14 +160,22 @@ form .signaturebackgrnd #signature {
   color: #000;
 }
 
-form #cvv {
-  grid-column: 2 / 3;
+form .cvv {
+  /* grid-column: 2 / 3; */
+  display: block;
+  position: absolute;
+  right: -45px;
+  top: 75px;
+  width: 40px;
   font-style: italic;
   text-align: center;
-  width: 100%;
   box-sizing: border-box;
   padding: 5px;
   margin-top: 0.2em;
+}
+
+form #cvv {
+  width: 100%;
 }
 
 form input:focus {
