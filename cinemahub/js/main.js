@@ -50,26 +50,26 @@ function getGenreNames(genreIds) {
   }).filter(name => name).join(', ');
 }
 
-function movieTemplate(movie) {
+function movieTvShowsTemplate(item) {
   return `
-    <div class="movie-card" data-movie-id="${movie.id}">
-      <img src="${ApiService.imageSecureBaseUrl}${posterSize}${movie.poster_path}" alt="${movie.title} Poster">
-      <h2>${movie.title}</h2>
+    <div class="movie-card" data-movie-id="${item.id}">
+      <img src="${ApiService.imageSecureBaseUrl}${posterSize}${item.poster_path}" alt="${item.title} Poster">
+      <h2>${item.title === undefined ? item.name : item.title}</h2>
       <p>
-        <strong>Release Date:</strong> ${movie.release_date ? movie.release_date : 'N/A'}<br>
-        <strong>Language:</strong> ${movie.original_language ? movie.original_language.toUpperCase() : 'N/A'}<br>
-        <strong>Genre(s):</strong> ${getGenreNames(movie.genre_ids)}<br>
-        <i class="fa-solid fa-star"></i> ${movie.vote_average.toFixed(2)}
+        <strong>Release Date:</strong> ${item.release_date ? item.release_date : item.first_air_date}<br>
+        <strong>Language:</strong> ${item.original_language ? item.original_language.toUpperCase() : 'N/A'}<br>
+        <strong>Genre(s):</strong> ${getGenreNames(item.genre_ids)}<br>
+        <i class="fa-solid fa-star"></i> ${item.vote_average.toFixed(2)}
       </p>
     </div>`
 };
 
 
-function renderMovies(movies) {
+function renderMoviesTvShows(movies) {
   const movieContainer = document.querySelector('.movie-grid');
   movieContainer.innerHTML = ''; // Clear existing skeletons
   movies.forEach(movie => {
-    const movieHtml = movieTemplate(movie);
+    const movieHtml = movieTvShowsTemplate(movie);
     movieContainer.innerHTML += movieHtml;
   });
 }
@@ -85,14 +85,14 @@ function getUniqueGenres(movies) {
   }).filter(genre => genre); // Filter out any undefined genres
 }
 
-let allTrendingMovies = [];
+let allTrendingMoviesTvShows = [];
 
 function renderGenreFilters(genres) {
   const filtersContainer = document.querySelector('.filters');
   filtersContainer.innerHTML = '<button class="active" data-genre-id="all" aria-label="Show all movies">All</button>'; // Clear and add All button
 
   // Check for movies with no genre and add N/A button if needed
-  const hasMoviesWithNoGenre = allTrendingMovies.some(movie => !movie.genre_ids || movie.genre_ids.length === 0);
+  const hasMoviesWithNoGenre = allTrendingMoviesTvShows.some(movie => !movie.genre_ids || movie.genre_ids.length === 0);
   if (hasMoviesWithNoGenre) {
     const button = document.createElement('button');
     button.textContent = 'N/A';
@@ -118,27 +118,27 @@ function renderGenreFilters(genres) {
       event.target.classList.add('active');
 
       if (genreId === 'all') {
-        renderMovies(allTrendingMovies);
+        renderMoviesTvShows(allTrendingMoviesTvShows);
       } else if (genreId === 'na') {
-        const filteredMovies = allTrendingMovies.filter(movie => !movie.genre_ids || movie.genre_ids.length === 0);
-        renderMovies(filteredMovies);
+        const filteredMovies = allTrendingMoviesTvShows.filter(movie => !movie.genre_ids || movie.genre_ids.length === 0);
+        renderMoviesTvShows(filteredMovies);
       } else {
-        const filteredMovies = allTrendingMovies.filter(movie => movie.genre_ids.includes(parseInt(genreId)));
-        renderMovies(filteredMovies);
+        const filteredMovies = allTrendingMoviesTvShows.filter(movie => movie.genre_ids.includes(parseInt(genreId)));
+        renderMoviesTvShows(filteredMovies);
       }
     }
   });
 }
 
-const searchForm = document.querySelector('.searchBar'); 
+const searchForm = document.querySelector('.searchBar');
 const searchInput = searchForm.querySelector('.searchInputBox');
 
 searchForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const query = searchInput.value.trim();
   if (query) {
-    const movies = await ApiService.searchMovies(query);
-    renderMovies(movies);
+    const movies = await ApiService.searchMoviesTvShows(query);
+    renderMoviesTvShows(movies);
 
     const uniqueGenres = getUniqueGenres(movies);
     renderGenreFilters(uniqueGenres);
@@ -146,18 +146,22 @@ searchForm.addEventListener('submit', async (event) => {
   }
 });
 
-function renderModal(movie) {
+function renderModal(item) {
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
-    <img src="${ApiService.imageSecureBaseUrl}w500${movie.poster_path}" alt="${movie.title} Poster">
+    <img src="${ApiService.imageSecureBaseUrl}w500${item.poster_path}" alt="${item.title} Poster">
     <div>
-      <h2>${movie.title}</h2>
-      <p><strong>Tagline:</strong> ${movie.tagline || 'N/A'}</p>
-      <p><strong>Overview:</strong> ${movie.overview}</p>
-      <p><strong>Release Date:</strong> ${movie.release_date}</p>
-      <p><strong>Runtime:</strong> ${movie.runtime} minutes</p>
-      <p><strong>Genres:</strong> ${movie.genres.map(g => g.name).join(', ')}</p>
-      <p><strong>Vote Average:</strong> ⭐ ${movie.vote_average.toFixed(2)}</p>
+      <h2>${item.title === undefined ? item.name : item.title}</h2>
+      <p><strong>Tagline:</strong> ${item.tagline || 'N/A'}</p>
+      <p><strong>Overview:</strong> ${item.overview}</p>
+      <p><strong>Release Date:</strong> ${item.release_date || item.first_air_date}</p>
+      ${item.runtime ? `
+      <p><strong>Runtime:</strong> ${item.runtime} minutes</p>
+      ` : `
+      <p><strong>Number of Episodes:</strong> ${item.number_of_episodes}</p>
+      `}
+      <p><strong>Genres:</strong> ${item.genres.map(g => g.name).join(', ')}</p>
+      <p><strong>Vote Average:</strong> ⭐ ${item.vote_average.toFixed(2)}</p>
     </div>
   `;
   document.getElementById('movie-modal').style.display = 'block';
@@ -166,13 +170,15 @@ function renderModal(movie) {
 const movieGrid = document.querySelector('.movie-grid');
 const modal = document.getElementById('movie-modal');
 const closeButton = document.querySelector('.close-button');
+const platform = document.getElementById('platform').textContent.trim();
+console.log(`Platform: ${platform}`); // Log the platform for debugging
 
 movieGrid.addEventListener('click', async (event) => {
   const card = event.target.closest('.movie-card');
   if (card) {
     const movieId = card.dataset.movieId;
-    const movie = await ApiService.movieDetails(movieId);
-    renderModal(movie);
+    const movieTvShow = await ApiService.movieTvShowsDetails(movieId, platform);
+    renderModal(movieTvShow);
   }
 });
 
@@ -181,30 +187,31 @@ closeButton.addEventListener('click', () => {
 });
 
 window.addEventListener('click', (event) => {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = 'none';
   }
 });
 
-async function renderHero() {
-  const featuredMovie = await ApiService.featureMovie();
-  if (featuredMovie) {
-    const details = await ApiService.movieDetails(featuredMovie.id);
+async function renderHero(platform) {
+  const featuredMovieTvShows = await ApiService.featureMovieTvShows("day", platform);
+  if (featuredMovieTvShows) {
+    const details = await ApiService.movieTvShowsDetails(featuredMovieTvShows.id, platform);
     const heroSection = document.querySelector('.hero');
     heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${ApiService.imageSecureBaseUrl}w1280${details.backdrop_path})`;
     heroSection.innerHTML = `
-      <h1>Featured Movie: ${details.title}</h1>
+      <h1>Featured: ${details.title === undefined ? details.name : details.title}</h1>
       <p>${details.tagline || details.overview}</p>
     `;
   }
 }
 
-async function Main() {
-  await renderHero();
-  allGenres = await ApiService.getMovieGenres();
-  allTrendingMovies = await ApiService.trendingMovies();
-  renderMovies(allTrendingMovies);
-  renderGenreFilters(getUniqueGenres(allTrendingMovies));
+
+async function Main(platform) {
+  await renderHero(platform);
+  allGenres = await ApiService.getGenres(platform);
+  allTrendingMoviesTvShows = await ApiService.trendingMoviesTvShows(platform);
+  renderMoviesTvShows(allTrendingMoviesTvShows);
+  renderGenreFilters(getUniqueGenres(allTrendingMoviesTvShows));
 }
 
-Main();
+export { random, movieTvShowsTemplate, renderMoviesTvShows, getGenreNames, getUniqueGenres, renderGenreFilters, renderModal, allTrendingMoviesTvShows, allGenres, renderHero, Main };

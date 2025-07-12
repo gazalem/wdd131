@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="cinema, movies, film, tv shows, entertainment, reviews, trailers">
+  <meta name="description" content="Your go-to platform for the latest movie and tv shows news, reviews, and trailers. Discover your next favorite film with CinemaHub.">
+  <meta name="author" content="Alan Montoya">
+  <title>CinemaHub Home Wireframe</title>
+  <link rel="preload" as="style" href="./css/normalize.min.css">
+  <link rel="stylesheet" href="./css/normalize.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Font Awesome -->
+  <link rel='preload' as="style" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' integrity='sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==' crossorigin='anonymous'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' integrity='sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==' crossorigin='anonymous'/>
+  <!-- Custom Styles -->
+  <!-- <link rel="stylesheet" href="./css/site-plan.css"> -->
+  <link rel="stylesheet" href="./css/main.css" media="all">
+  <script src="./js/tvshows.js" type="module"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="./images/logo.svg" alt="Logo" id="site-logo">
+    <div class="mobileMenuWrapper">
+        <nav class="navigation">
+            <a href="./index.html">Home</a>
+            <a href="./tvshows.html">TV Shows</a>
+            <!-- <a href="#">Favorites</a> -->
+        </nav>
+        <form class="searchBar">
+            <input type="text" name="search" placeholder="Search" class="searchInputBox">
+            <button class="searchButton" aria-label="Search movies">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <i class="hamburgerMenu fa-solid fa-bars"></i>
+    </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Featured Movie Title</h1>
+    <p>Catch the most popular movie of the day, watch trailer and read reviews.</p>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <button>Action</button>
+    <button>Comedy</button>
+    <button>Drama</button>
+    <button>Horror</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <button>Sci-Fi</button>
+    <select>
+      <option>All Ratings</option>
+      <option>9+</option>
+      <option>8+</option>
+      <option>7+</option>
+    </select>
+  </section>
+
+  <!-- Main Movie Grid -->
+  <main class="movie-grid">
+    <!-- Skeleton placeholders -->
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+    <div class="movie-card skeleton"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="current-year"></span> CinemaHub. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <!-- Movie/TV Show Details Modal -->
+  <div id="movie-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- platform selection -->
+  <div id="platform" style="display: none;">tv</div>
+
+</body>
+</html>
