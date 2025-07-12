@@ -7,10 +7,10 @@ currentYear.textContent = currentDate.getFullYear();
 
 
 // Hamburger Menu Toggle
-const hamburgerMenu = document.getElementsByClassName("hamburgerMenu")[0]
-const mobileMenuWrapper = document.getElementsByClassName("mobileMenuWrapper")[0]
+const hamburgerMenu = document.getElementsByClassName("hamburgerMenu")[0];
+const mobileMenuWrapper = document.getElementsByClassName("mobileMenuWrapper")[0];
 
-hamburgerMenu.addEventListener("click", showMobileMenu)
+hamburgerMenu.addEventListener("click", showMobileMenu);
 
 function showMobileMenu() {
   mobileMenuWrapper.classList.toggle("clicked");
@@ -171,7 +171,7 @@ const movieGrid = document.querySelector('.movie-grid');
 const modal = document.getElementById('movie-modal');
 const closeButton = document.querySelector('.close-button');
 const platform = document.getElementById('platform').textContent.trim();
-console.log(`Platform: ${platform}`); // Log the platform for debugging
+
 
 movieGrid.addEventListener('click', async (event) => {
   const card = event.target.closest('.movie-card');
