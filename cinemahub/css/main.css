@@ -374,15 +374,29 @@ footer a {
 
   /* If the viewport width is small, hide the navigation and searchbar */
   .navigation{
-      display: none;
+    display: none;
   }
 
   .searchBar {
-      display: none;
-}
+    display: none;
+  }
 
   /* And just show the hamburger menu */
   .hamburgerMenu {
-      display: block;
+    display: block;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #modal-body img {
+    max-width: 100%;
   }
 }
