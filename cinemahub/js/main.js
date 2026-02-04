@@ -146,14 +146,34 @@ searchForm.addEventListener('submit', async (event) => {
   }
 });
 
-function renderModal(item) {
+function renderModal(item, providers = null) {
   const modalBody = document.getElementById('modal-body');
+  
+  let providerHtml = '';
+  if (providers && providers.US) {
+    const usProviders = providers.US;
+    if (usProviders.flatrate) {
+      providerHtml += `<p><strong>Stream:</strong> ${usProviders.flatrate.map(p => p.provider_name).join(', ')}</p>`;
+    }
+    if (usProviders.buy) {
+      providerHtml += `<p><strong>Buy:</strong> ${usProviders.buy.map(p => p.provider_name).join(', ')}</p>`;
+    }
+    if (usProviders.rent) {
+      providerHtml += `<p><strong>Rent:</strong> ${usProviders.rent.map(p => p.provider_name).join(', ')}</p>`;
+    }
+  } else {
+    providerHtml = '<p><strong>Where to watch:</strong> Not available in US.</p>';
+  }
+
+  const starring = item.credits && item.credits.cast ? item.credits.cast.slice(0, 5).map(c => c.name).join(', ') : 'N/A';
+
   modalBody.innerHTML = `
     <img src="${ApiService.imageSecureBaseUrl}w500${item.poster_path}" alt="${item.title} Poster">
     <div>
       <h2>${item.title === undefined ? item.name : item.title}</h2>
       <p><strong>Tagline:</strong> ${item.tagline || 'N/A'}</p>
       <p><strong>Overview:</strong> ${item.overview}</p>
+      <p><strong>Starring:</strong> ${starring}</p>
       <p><strong>Release Date:</strong> ${item.release_date || item.first_air_date}</p>
       ${item.runtime ? `
       <p><strong>Runtime:</strong> ${item.runtime} minutes</p>
@@ -162,6 +182,7 @@ function renderModal(item) {
       `}
       <p><strong>Genres:</strong> ${item.genres.map(g => g.name).join(', ')}</p>
       <p><strong>Vote Average:</strong> ⭐ ${item.vote_average.toFixed(2)}</p>
+      ${providerHtml}
     </div>
   `;
   document.getElementById('movie-modal').style.display = 'block';
@@ -178,7 +199,8 @@ movieGrid.addEventListener('click', async (event) => {
   if (card) {
     const movieId = card.dataset.movieId;
     const movieTvShow = await ApiService.movieTvShowsDetails(movieId, platform);
-    renderModal(movieTvShow);
+    const providers = await ApiService.getWatchProviders(movieId, platform);
+    renderModal(movieTvShow, providers);
   }
 });
 

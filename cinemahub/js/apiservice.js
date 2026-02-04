@@ -92,7 +92,7 @@ async function featureMovieTvShows(timeWindows = 'day', platform = "movie") {
 
 async function movieTvShowsDetails(movieId, platform = "movie") {
   try {
-    const response = await fetch(`${apiBaseUrl}/${platform}/${movieId}?language=en-US`, options);
+    const response = await fetch(`${apiBaseUrl}/${platform}/${movieId}?language=en-US&append_to_response=credits`, options);
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
     }
@@ -123,5 +123,18 @@ async function searchMoviesTvShows(query, platform = "movie") {
 
 // TV Shows implementation
 
+async function getWatchProviders(id, platform = "movie") {
+  try {
+    const response = await fetch(`${apiBaseUrl}/${platform}/${id}/watch/providers`, options);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
+}
 
-export { discoverMoviesTvShows, trendingMoviesTvShows, imagesConfiguration, apiBaseUrl, imageSecureBaseUrl, searchMoviesTvShows, getGenres, movieTvShowsDetails, featureMovieTvShows };
+
+export { discoverMoviesTvShows, trendingMoviesTvShows, imagesConfiguration, apiBaseUrl, imageSecureBaseUrl, searchMoviesTvShows, getGenres, movieTvShowsDetails, featureMovieTvShows, getWatchProviders };
